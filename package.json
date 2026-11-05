@@ -1,0 +1,11 @@
+{
+  "name": "neoscribvisu-cdc",
+  "version": "1.0.0",
+  "description": "Évolution des bibliothèques d'une intercommunalité de Gironde, à partir des données de l'enquête annuelle SLL préparées par NeoScribVisu",
+  "scripts": {
+    "start": "node scripts/serveur.mjs"
+  },
+  "license": "MIT",
+  "type": "module",
+  "private": true
+}

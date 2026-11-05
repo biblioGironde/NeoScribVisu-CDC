@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NeoScribVisu – évolution d'une intercommunalité</title>
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="evitement" href="#contenu">Aller au contenu</a>
+  <div class="cadre">
+    <nav class="sommaire" aria-label="Pages">
+      <div class="marque">
+        <span class="marque-titre">NeoScribVisu</span>
+        <span class="marque-sous">Évolution d'une intercommunalité</span>
+      </div>
+      <button class="bouton-menu" type="button" aria-expanded="false" aria-controls="liste-pages">Pages</button>
+      <ol id="liste-pages" class="liste-pages"></ol>
+      <p class="pied-sommaire">Données : enquête du Service du livre et de la lecture, ministère de la Culture, préparées par <a href="https://bibliogironde.github.io/NeoScribVisu/">NeoScribVisu</a>.<br>
+        Voir aussi : <a href="https://bibliogironde.github.io/NeoScribVisu-BM/">évolution d'une bibliothèque</a>.<br><a href="#a-savoir">Méthode et limites</a></p>
+    </nav>
+
+    <div class="principal">
+      <form class="filtres" aria-label="Choix de l'intercommunalité" onsubmit="return false">
+        <label class="champ-large">Intercommunalité
+          <select name="epci"></select>
+        </label>
+        <label>Chiffres clés de
+          <select name="annee"></select>
+        </label>
+        <button type="button" class="ouvrir-export principal-action">Exporter en PDF</button>
+      </form>
+
+      <main id="contenu" tabindex="-1">
+        <div class="avertissement" hidden></div>
+        <header class="entete-page"></header>
+        <div class="page"><p class="chargement">Chargement des données…</p></div>
+        <section class="bloc a-savoir" id="a-savoir">
+          <h2>Méthode et limites</h2>
+          <ul></ul>
+        </section>
+      </main>
+    </div>
+  </div>
+  <div id="impression" aria-hidden="true"></div>
+  <style id="style-impression"></style>
+
+  <dialog id="dialogue-export" aria-labelledby="titre-export">
+    <form method="dialog">
+      <h2 id="titre-export">Exporter en PDF</h2>
+      <p class="export-intro">Le document est mis en page en A4 paysage pour :</p>
+      <p class="export-perimetre"></p>
+      <fieldset>
+        <legend>Pages à intégrer</legend>
+        <div class="export-raccourcis">
+          <button type="button" class="export-toutes">Tout cocher</button>
+          <button type="button" class="export-aucune">Tout décocher</button>
+        </div>
+        <div class="export-pages export-liste"></div>
+      </fieldset>
+      <fieldset>
+        <legend>Complément</legend>
+        <div class="export-liste"><label><input type="checkbox" name="methode" checked> Méthode et limites</label></div>
+      </fieldset>
+      <p class="export-erreur" role="alert" hidden></p>
+      <p class="export-aide">La fenêtre d'impression va s'ouvrir : choisissez la destination « Enregistrer au format PDF ».</p>
+      <div class="export-actions">
+        <button type="button" class="export-annuler">Annuler</button>
+        <button type="submit" class="principal-action">Créer le PDF</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
