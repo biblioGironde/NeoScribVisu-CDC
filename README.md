@@ -36,6 +36,7 @@ Pour tester avec un import local de NeoScribVisu : `npm start -- ../NeoScribVisu
 
 Le site est publié sur GitHub Pages par la GitHub Action « Publication GitHub Pages » à chaque modification de `public/` sur `main`.
 
-## Licence
+## Licences
 
-Code sous licence MIT. Données : ministère de la Culture, enquête annuelle sur les bibliothèques des collectivités territoriales.
+- **Code** : © Département de la Gironde — biblio.gironde, sous licence [GNU Affero General Public License v3.0](LICENSE) ou ultérieure (AGPL-3.0-or-later). Vous pouvez le réutiliser et le modifier ; toute version modifiée, redistribuée ou mise en ligne, doit être publiée sous la même licence, avec son code source.
+- **Données** : ministère de la Culture, enquête annuelle sur les bibliothèques des collectivités territoriales. Elles restent sous la licence de leur producteur.
